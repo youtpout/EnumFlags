@@ -20,11 +20,12 @@ namespace EnumFlags
             foreach (var item in spells)
             {
                 Console.WriteLine($"Pour le sort {item.Name} nous avons : ");
-                if ((item.SpellType & SpellTypeEnum.Eau) == SpellTypeEnum.Eau)
+                // two differents method for check flag
+                if (item.SpellType.HasFlag(SpellTypeEnum.Eau))
                 {
                     Console.Write("de l'eau ");
                 }
-                if ((item.SpellType & SpellTypeEnum.Feu) == SpellTypeEnum.Feu)
+                if (item.SpellType.HasFlag(SpellTypeEnum.Feu))
                 {
                     Console.Write("du feu ");
                 }
